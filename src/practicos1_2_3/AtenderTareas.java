@@ -1,3 +1,5 @@
+package practicos1_2_3;
+
 import java.util.Random;
 
 public class AtenderTareas{
@@ -109,7 +111,7 @@ public class AtenderTareas{
 
         cojuntoSolucion = AtenderTareas.MinimizacionTiempo(tiempoClientes);
         
-        System.out.println("Tiempos de taread de clientes: ");
+        System.out.println("Lista de tareas: ");
         AtenderTareas.MotrarTareas(tiempoClientes);
 
         System.out.println("\n\nConjunto Solucion: ");

@@ -1,11 +1,41 @@
-public class ListaEnlazada {
+public class ListaEnlazada{
     private Nodo primero;
-
+    private int cantidadNodos;
     
+
     public ListaEnlazada() {
         this.primero = null;
+        this.cantidadNodos = 0;
     }
 
+    // Definicion d ela clase Nodo
+    public class Nodo<T>{
+        private Nodo sig;
+        private T t;
+
+        public Nodo(T t) {
+            this.t = t;
+        }
+    
+        public Nodo getSig() {
+            return sig;
+        }
+    
+        public void setSig(Nodo sig) {
+            this.sig = sig;
+        }
+    
+        public T getT() {
+            return t;
+        }
+    
+        public void setT(T t) {
+            this.t = t;
+        }
+        
+    }
+
+// Metodos y atributos de la clase ListaEnlazada
 
     public static ListaEnlazada crearLista(){
         return(new ListaEnlazada());
@@ -15,37 +45,34 @@ public class ListaEnlazada {
         return(this.primero == null);
     }
 
-    public void insertarAlFinal(int x){
+    public void insertarInicio(Object objeto){
+        Nodo<Object> nuevoNodo = new Nodo<Object>(objeto);
+        nuevoNodo.setSig(this.primero);
+        this.primero = nuevoNodo;
         
+        this.cantidadNodos += 1;
+    }
+
+    void insertarFinal(Object objeto){
         if(!this.esVacia()){
             Nodo aux = this.primero;
-            while(aux.getSig() != null){
+            while(aux.getSig() != null)
                 aux = aux.getSig();
-            }
-            aux.setSig(new Nodo(x));
-        }
-        else
-            this.insertarAlinicio(x);
-
-    }
-
-    public void insertarAlinicio(int x){
-        if(!this.esVacia()){
-            Nodo nuevoNodo = new Nodo(x);
-            nuevoNodo.setSig(this.primero.getSig());
-            this.primero = nuevoNodo;
+            Nodo<Object> nuevoNodo = new Nodo<Object>(objeto);
+            aux.setSig(nuevoNodo);
         }else
-            this.primero = new Nodo(x);
+            this.insertarInicio(objeto);
 
-
+        this.cantidadNodos += 1;
     }
+
 
     private void mostrar(Nodo aux){
         if(aux.getSig() == null)
-            System.out.println(aux.getInfo());
+            System.out.println(aux.getT());
         else{
-            System.out.println(aux.getInfo());
-            mostrar(aux = aux.getSig());  
+            System.out.println(aux.getT());
+            mostrar(aux = aux.getSig());
         }
     }
 
@@ -55,35 +82,30 @@ public class ListaEnlazada {
     }
 
 
-    private int SumaListaUmbral(Nodo aux, int valorUmbral){
-        if(aux.getSig() == null){
-            if(aux.getInfo() > valorUmbral)
-                return valorUmbral;
-            else
-                return 0;
-        }else{
-            if(aux.getInfo() > valorUmbral)
-                return(aux.getInfo() + SumaListaUmbral(aux = aux.getSig(), valorUmbral));
-            else
-                return(SumaListaUmbral(aux = aux.getSig(), valorUmbral));
+   
+    public int cantidad(){
+        return(this.cantidadNodos);
+    }
+
+    public void borrarPrimero(){
+        if(!this.esVacia()){
+            this.primero = this.primero.getSig();
         }
+
+        this.cantidadNodos -= 1;
     }
 
-    public int SumaListaUmbral(int valorUmbral){
-        Nodo aux = this.primero;
-        return(this.SumaListaUmbral(aux, valorUmbral));
+    public void borrarUltimo(){
+        if(!this.esVacia() && this.primero.getSig() != null){
+            Nodo aux = this.primero;
+            while(aux.getSig().getSig() != null)
+                aux = aux.getSig();
+            aux.setSig(null);
+        }else if(!this.esVacia())
+            this.primero = null;
+        
+        this.cantidadNodos -= 1;
     }
 
-    public static void main(String[] args) {
-        ListaEnlazada lista1 = ListaEnlazada.crearLista();
-
-        lista1.insertarAlFinal(6);
-        lista1.insertarAlFinal(1);
-        lista1.insertarAlFinal(4);
-        lista1.insertarAlFinal(2);
-
-        lista1.mostrar();
-        System.out.println("\n\n" +lista1.SumaListaUmbral(3));
-    }
 
 }

@@ -1,3 +1,5 @@
+package practicos1_2_3;
+
 public class Bternaria {
     private static boolean Busquedaternaria(int[] vector, int X, int inf, int sup){
         int medioInf = inf + (sup - inf)/3;
