@@ -1,5 +1,7 @@
-// Blasich, Fabricio Lucas
 package practico4;
+
+// Blasich, Fabricio Lucas
+
 public class ListaEnlazada <T>{
     
     class Nodo<T>{
@@ -30,7 +32,7 @@ public class ListaEnlazada <T>{
     private Nodo primero;
     private int cantidad;
     
-    ListaEnlazada(){
+    public ListaEnlazada(){
         this.primero=null;
         this.cantidad=0;
     }

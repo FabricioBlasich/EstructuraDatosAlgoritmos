@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "practico5.Main",
+            "projectName": "EstructuraDatosAlgoritmos_738e2ad3"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "practico4.Main",
             "projectName": "EstructuraDatosAlgoritmos_738e2ad3"
         },
