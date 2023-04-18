@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "practico4.Main",
+            "projectName": "EstructuraDatosAlgoritmos_738e2ad3"
+        },
+        {
+            "type": "java",
             "name": "AtenderTareas",
             "request": "launch",
             "mainClass": "AtenderTareas",

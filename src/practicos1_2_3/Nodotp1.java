@@ -1,15 +1,15 @@
 package practicos1_2_3;
 
-public class Nodo {
-    private Nodo sig;
+public class Nodotp1 {
+    private Nodotp1 sig;
     private int info;
 
 
-    public Nodo(int info) {
+    public Nodotp1(int info) {
         this.info = info;
     }
 
-    public Nodo getSig() {
+    public Nodotp1 getSig() {
         return sig;
     }
 
@@ -17,7 +17,7 @@ public class Nodo {
         return info;
     }
     
-    public void setSig(Nodo sig) {
+    public void setSig(Nodotp1 sig) {
         this.sig = sig;
     }
 

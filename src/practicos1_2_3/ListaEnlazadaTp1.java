@@ -1,16 +1,19 @@
 package practicos1_2_3;
 
-public class ListaEnlazada {
-    private Nodo primero;
+import practico4.RedSocial;
+
+public class ListaEnlazadaTp1 {
+    private Nodotp1 primero;
 
     
-    public ListaEnlazada() {
+
+    public ListaEnlazadaTp1() {
         this.primero = null;
     }
 
 
-    public static ListaEnlazada crearLista(){
-        return(new ListaEnlazada());
+    public static ListaEnlazadaTp1 crearLista(){
+        return(new ListaEnlazadaTp1());
     }
 
     public boolean esVacia(){
@@ -20,11 +23,11 @@ public class ListaEnlazada {
     public void insertarAlFinal(int x){
         
         if(!this.esVacia()){
-            Nodo aux = this.primero;
+            Nodotp1 aux = this.primero;
             while(aux.getSig() != null){
                 aux = aux.getSig();
             }
-            aux.setSig(new Nodo(x));
+            aux.setSig(new Nodotp1(x));
         }
         else
             this.insertarAlinicio(x);
@@ -33,16 +36,16 @@ public class ListaEnlazada {
 
     public void insertarAlinicio(int x){
         if(!this.esVacia()){
-            Nodo nuevoNodo = new Nodo(x);
+            Nodotp1 nuevoNodo = new Nodotp1(x);
             nuevoNodo.setSig(this.primero.getSig());
             this.primero = nuevoNodo;
         }else
-            this.primero = new Nodo(x);
+            this.primero = new Nodotp1(x);
 
 
     }
 
-    private void mostrar(Nodo aux){
+    private void mostrar(Nodotp1 aux){
         if(aux.getSig() == null)
             System.out.println(aux.getInfo());
         else{
@@ -52,12 +55,12 @@ public class ListaEnlazada {
     }
 
     public void mostrar(){
-        Nodo aux = this.primero;
+        Nodotp1 aux = this.primero;
         this.mostrar(aux);
     }
 
 
-    private int SumaListaUmbral(Nodo aux, int valorUmbral){
+    private int SumaListaUmbral(Nodotp1 aux, int valorUmbral){
         if(aux.getSig() == null){
             if(aux.getInfo() > valorUmbral)
                 return valorUmbral;
@@ -72,12 +75,12 @@ public class ListaEnlazada {
     }
 
     public int SumaListaUmbral(int valorUmbral){
-        Nodo aux = this.primero;
+        Nodotp1 aux = this.primero;
         return(this.SumaListaUmbral(aux, valorUmbral));
     }
 
     public static void main(String[] args) {
-        ListaEnlazada lista1 = ListaEnlazada.crearLista();
+        ListaEnlazadaTp1 lista1 = ListaEnlazadaTp1.crearLista();
 
         lista1.insertarAlFinal(6);
         lista1.insertarAlFinal(1);
