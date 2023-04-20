@@ -21,7 +21,7 @@ public class infija_Posfija {
                     }
                 }else if(!(operatorPriority == -1)){ // operatorPriority = ')'
                     if(operatorPriority <= prioridadOperdador(((Character)pilaOperadores.top())) && operatorPriority != 1){
-                        while(!pilaOperadores.esPilaVacia() && operatorPriority <= prioridadOperdador(((Character)pilaOperadores.top())) &&  prioridadOperdador(((Character)pilaOperadores.top())) != 1){
+                        while(!pilaOperadores.esPilaVacia() && operatorPriority <= prioridadOperdador(((Character)pilaOperadores.top())) ){
                             posfija = posfija.concat(Character.toString((Character)pilaOperadores.top()));
                             pilaOperadores.pop();
                         }
