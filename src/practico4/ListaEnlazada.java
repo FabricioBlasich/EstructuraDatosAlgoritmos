@@ -135,8 +135,8 @@ public class ListaEnlazada <T>{
     }
     
 
-    public Nodo getPrimero() {
-        return this.primero;
+    public T getValorPrimero() {
+        return (T) this.primero.getValor();
     }
 
     public int getCantidad() {
