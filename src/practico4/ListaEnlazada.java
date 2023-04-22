@@ -143,13 +143,10 @@ public class ListaEnlazada <T>{
             return(esta(aux = aux.getSig(), item));
     }
 
-<<<<<<< HEAD
     public boolean esta(T item){
         return this.esta(this.primero, item);
     }
 
-=======
->>>>>>> 69b5d257d7272bdfc1ebd81815114d8d546a9d2c
     public T getValorPrimero() {
         return (T) this.primero.getValor();
     }
