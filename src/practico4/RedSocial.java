@@ -52,18 +52,10 @@ public class RedSocial{
         this.listaEnlazada.borrarConValores(usuario);
     }
 
-    private boolean esta(Nodo aux, Usuario usuario){
-        if(aux == null)
-            return false;
-        else if(aux.getValor().equals(usuario))    // deberia definir esta funcion "esta" en la lista enlazada
-            return true;
-        else
-            return(esta(aux = aux.getSig(), usuario));
-
-    }
+    
 
     public boolean esta(Usuario usuario){
-        return this.esta(this.listaEnlazada.getPrimero(), usuario);
+        return this.listaEnlazada.esta(usuario);
     }
 
     public void mostrar(){

@@ -134,6 +134,18 @@ public class ListaEnlazada <T>{
         }
     }
     
+    private boolean esta(Nodo aux, T item){
+        if(aux == null)
+            return false;
+        else if(aux.getValor().equals(item))    // deberia definir esta funcion "esta" en la lista enlazada
+            return true;
+        else
+            return(esta(aux = aux.getSig(), item));
+    }
+
+    public boolean esta(T item){
+        return this.esta(this.primero, item);
+    }
 
     public T getValorPrimero() {
         return (T) this.primero.getValor();
