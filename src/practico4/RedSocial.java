@@ -22,7 +22,7 @@ public class RedSocial{
     
 
     public Usuario ultimoUsuario(){
-        return (Usuario) (this.listaEnlazada.getPrimero().getValor());
+        return (Usuario) this.listaEnlazada.getValorPrimero();
     }
 
     public int cantidad(){
@@ -55,7 +55,7 @@ public class RedSocial{
     private boolean esta(Nodo aux, Usuario usuario){
         if(aux == null)
             return false;
-        else if(aux.getValor().equals(usuario))
+        else if(aux.getValor().equals(usuario))    // deberia definir esta funcion "esta" en la lista enlazada
             return true;
         else
             return(esta(aux = aux.getSig(), usuario));
