@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fila",
+            "request": "launch",
+            "mainClass": "practico6.Fila",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "practico6.Main",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "practico4.Main",
