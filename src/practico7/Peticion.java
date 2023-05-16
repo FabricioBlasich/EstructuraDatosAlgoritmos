@@ -1,4 +1,4 @@
-package practico6;
+package practico7;
 
 import java.util.Random;
 

@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ArbolBinario",
+            "request": "launch",
+            "mainClass": "practico8.ArbolBinario",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "practico8.main",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "practico7.Main",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
+            "name": "LC",
+            "request": "launch",
+            "mainClass": "practico7.LC",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
+            "name": "ListaCircular",
+            "request": "launch",
+            "mainClass": "practico7.ListaCircular",
+            "projectName": "EstructuraDatosAlgoritmos_f3abf288"
+        },
+        {
+            "type": "java",
             "name": "Fila",
             "request": "launch",
             "mainClass": "practico6.Fila",
