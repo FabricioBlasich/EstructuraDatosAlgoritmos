@@ -10,5 +10,6 @@ public class main {
         System.out.println("\nPostOrden:");
         arbolB.ordenPosterior();
         System.out.println();
+        
     }
 }

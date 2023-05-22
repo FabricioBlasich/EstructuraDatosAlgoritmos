@@ -58,7 +58,7 @@ public class ArbolBinario{
     }
 
     public boolean pertenece(int item){
-        if(!this.esAB_Vacio())
+        if(this.esAB_Vacio())
             return false;
         else
             return (item == this.raiz || izquierda.pertenece(item) || derecha.pertenece(item));
