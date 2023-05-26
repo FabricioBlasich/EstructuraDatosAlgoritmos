@@ -13,7 +13,7 @@ public class Servidor {
     private int tiempoEsperaMaxPetComunes;
     private int peticionaPrioritariaAtendidas;
     private int peticionaComunesAtendidas;
-    final int  tiempoProcesamiento = 1;
+    final int  TIEMPO_PROCESAMIENTO = 5;
     private int tiempoRestanteProcesamiento = 0;
 
 
@@ -70,7 +70,7 @@ public class Servidor {
                         this.enCurso = null;
                         this.peticionaPrioritariaAtendidas++;
                     }
-                    else if(this.tiempoRestanteProcesamiento < tiempoProcesamiento)
+                    else if(this.tiempoRestanteProcesamiento < TIEMPO_PROCESAMIENTO)
                         tiempoRestanteProcesamiento++;
                     else{
                         LC_Prioridad.LC_Rotar();
@@ -85,7 +85,7 @@ public class Servidor {
                         this.enCurso = null;
                         this.peticionaComunesAtendidas++;
                     }
-                    else if(this.tiempoRestanteProcesamiento < tiempoProcesamiento)
+                    else if(this.tiempoRestanteProcesamiento < TIEMPO_PROCESAMIENTO)
                         tiempoRestanteProcesamiento++;
                     else{
                         LC_Comun.LC_Rotar();
